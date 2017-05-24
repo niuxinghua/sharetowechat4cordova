@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    id="cordova-xiaoniu-sharepics"
+    version="0.0.1"
+    xmlns="http://www.phonegap.com/ns/plugins/1.0" >
+
+    <name>sharePics</name>
+
+    <license>MIT license</license>
+
+    <description>分享到微信</description>
+
+    <keywords>share</keywords>
+
+    <repo></repo>
+
+    <issue></issue>
+
+    <engines><engine name="cordova" version=">=3.3.0" /></engines>
+
+
+    <js-module name="sharePics" src="www/sharePics.js" >
+        <clobbers target="sharePics" />
+    </js-module>
+
+<platform name="ios" >
+    <config-file target="config.xml" parent="/*">
+        <feature name="sharePics">
+             <param name="ios-package" value="SharePlugin" />
+             <param name="onload" value="true" />
+        </feature>
+    </config-file>
+    <header-file src="src/ios/SharePlugin.h" />
+    <source-file src="src/ios/SharePlugin.m" />
+    <framework src="Foundation.framework" />
+    <framework src="UIKit.framework" />
+    <framework src="ImageIO.framework" />
+    <framework src="MapKit.framework" />
+</platform>
+</plugin>
